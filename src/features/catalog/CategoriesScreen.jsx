@@ -156,7 +156,7 @@ export function CategoriesScreen() {
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-2 gap-2.5">
             {filteredCategories.map((cat) => {
               const Icon = ICON_MAP[cat.icon] || Camera
 
@@ -164,15 +164,15 @@ export function CategoriesScreen() {
                 <div
                   key={cat.id}
                   onClick={() => handleSelectCategory(cat.id)}
-                  className="bg-white rounded-2xl p-4 border border-slate-200/80 shadow-2xs hover:shadow-md hover:border-red-400 group transition-all flex flex-col items-center text-center cursor-pointer active:scale-95"
+                  className="bg-white rounded-xl py-2.5 px-3 border border-slate-200/80 shadow-2xs hover:shadow-xs hover:border-red-400 group transition-all flex flex-col items-center text-center cursor-pointer active:scale-95"
                 >
-                  {/* Clean Icon Badge */}
-                  <div className="w-14 h-14 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center text-slate-700 group-hover:bg-red-50 group-hover:text-[#D92228] group-hover:border-red-200 transition-all mb-2.5">
-                    <Icon className="w-6 h-6 stroke-[1.8]" />
+                  {/* Clean Compact Icon Badge */}
+                  <div className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center text-slate-700 group-hover:bg-red-50 group-hover:text-[#D92228] group-hover:border-red-200 transition-all mb-1.5 shrink-0">
+                    <Icon className="w-5 h-5 stroke-[1.8]" />
                   </div>
 
                   {/* Category Name */}
-                  <h3 className="text-xs font-bold text-slate-800 group-hover:text-[#D92228] transition-colors leading-snug line-clamp-2">
+                  <h3 className="text-[11px] font-bold text-slate-800 group-hover:text-[#D92228] transition-colors leading-tight line-clamp-2">
                     {cat.label}
                   </h3>
                 </div>
