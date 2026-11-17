@@ -1,6 +1,21 @@
 import React from 'react'
 
-export function ProductGraphic({ type, className = "w-full h-full" }) {
+export function ProductGraphic({ type, image, className = "w-full h-full" }) {
+  if (image) {
+    return (
+      <img
+        src={image}
+        alt="Product"
+        className={`${className} object-contain transition-transform`}
+        loading="lazy"
+        onError={(e) => {
+          // If image fails, fallback to rendering the SVG
+          e.target.style.display = 'none'
+        }}
+      />
+    )
+  }
+
   if (type === "camera") {
     return (
       <svg viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>

@@ -76,7 +76,7 @@ export function CartScreen() {
                   <div key={item.id} className="pt-3 first:pt-0 flex items-center justify-between gap-4">
                     {/* Thumbnail */}
                     <div className="w-16 sm:w-20 h-16 sm:h-20 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 p-1.5">
-                      <ProductGraphic type={item.type} className="w-full h-full object-contain" />
+                      <ProductGraphic type={item.type} image={item.image} className="w-full h-full object-contain" />
                     </div>
 
                     {/* Info */}

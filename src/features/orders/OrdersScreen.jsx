@@ -131,7 +131,7 @@ export function OrdersScreen() {
                           key={idx}
                           className="w-11 sm:w-12 h-11 sm:h-12 rounded-lg bg-slate-50 border border-slate-100 flex items-center justify-center p-0.5"
                         >
-                          <ProductGraphic type={item.type} className="w-full h-full object-contain" />
+                          <ProductGraphic type={item.type} image={item.image} className="w-full h-full object-contain" />
                         </div>
                       ))}
                     </div>

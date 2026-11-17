@@ -79,7 +79,7 @@ export function ProductDetailsScreen() {
       <div className="flex-1 overflow-y-auto px-4 py-2 space-y-4 no-scrollbar">
         {/* Large Product Showcase */}
         <div className="w-full h-44 flex items-center justify-center p-3 rounded-2xl bg-gradient-to-b from-slate-50 to-slate-100/60 relative overflow-hidden border border-slate-100">
-          <ProductGraphic type={selectedProduct.type} className="w-4/5 h-4/5 object-contain drop-shadow-lg" />
+          <ProductGraphic type={selectedProduct.type} image={selectedProduct.image} className="w-4/5 h-4/5 object-contain drop-shadow-lg" />
           {selectedProduct.badge && (
             <span className="absolute top-3 left-3 bg-[#D92228] text-white text-[9px] font-bold px-2 py-0.5 rounded-full shadow-xs">
               {selectedProduct.badge}

@@ -223,7 +223,7 @@ export function HomeScreen() {
                 className="w-[148px] min-w-[148px] shrink-0 snap-start bg-white rounded-2xl p-3 border border-slate-200/80 shadow-2xs hover:shadow-md transition-all cursor-pointer group flex flex-col justify-between"
               >
                 <div className="h-24 w-full flex items-center justify-center bg-slate-50/50 rounded-xl overflow-hidden p-1">
-                  <ProductGraphic type={prod.type} className="w-full h-full object-contain group-hover:scale-105 transition-transform" />
+                  <ProductGraphic type={prod.type} image={prod.image} className="w-full h-full object-contain group-hover:scale-105 transition-transform" />
                 </div>
                 <div className="mt-2 flex items-end justify-between">
                   <div className="min-w-0 pr-1">

@@ -180,6 +180,7 @@ export function CatalogScreen() {
                   <div className="h-28 w-full flex items-center justify-center p-1 rounded-xl bg-slate-50/50">
                     <ProductGraphic
                       type={product.type}
+                      image={product.image}
                       className="w-full h-full object-contain group-hover:scale-105 transition-transform"
                     />
                   </div>
