@@ -76,11 +76,6 @@ export function BottomNav({ activeScreen, isMoreActive = false }) {
           )
         })}
       </div>
-
-      {/* iOS Home Indicator Bar */}
-      <div className="flex justify-center pb-0.5">
-        <div className="w-28 h-1 bg-slate-900/80 rounded-full"></div>
-      </div>
     </div>
   )
 }
