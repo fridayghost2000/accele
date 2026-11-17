@@ -6,7 +6,9 @@ import {
   Wrench, 
   HelpCircle, 
   Headphones,
-  CheckCircle2
+  CheckCircle2,
+  AlertCircle,
+  X
 } from 'lucide-react'
 import { BottomNav } from '@/components/common/BottomNav'
 import { useApp } from '@/context/AppContext'
@@ -15,6 +17,7 @@ export function SupportScreen() {
   const { goBack } = useApp()
   const [supportRequested, setSupportRequested] = useState(false)
   const [query, setQuery] = useState('')
+  const [activeModalTile, setActiveModalTile] = useState(null)
 
   const supportTiles = [
     { id: 'manuals', title: 'Product\nManuals', icon: BookOpen },
@@ -22,6 +25,10 @@ export function SupportScreen() {
     { id: 'faqs', title: 'FAQs\n& Help', icon: HelpCircle },
     { id: 'contact', title: 'Contact\nSupport', icon: Headphones },
   ]
+
+  const handleTileClick = (tile) => {
+    setActiveModalTile(tile)
+  }
 
   return (
     <div className="h-full flex flex-col bg-[#F8F9FA] text-slate-800 select-none relative">
@@ -55,6 +62,11 @@ export function SupportScreen() {
               placeholder="Search help articles..."
               value={query}
               onChange={(e) => setQuery(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  setActiveModalTile({ title: `Search for "${query || 'Help'}"` })
+                }
+              }}
               className="w-full bg-white rounded-xl pl-10 pr-4 py-2.5 text-xs sm:text-sm text-slate-800 placeholder-slate-400 border border-slate-200 shadow-2xs focus:outline-none focus:border-red-500"
             />
           </div>
@@ -66,7 +78,7 @@ export function SupportScreen() {
               return (
                 <button
                   key={tile.id}
-                  onClick={() => alert(`Opening Accele ${tile.id.toUpperCase()} resources...`)}
+                  onClick={() => handleTileClick(tile)}
                   className="bg-white rounded-2xl p-4 sm:p-6 border border-slate-200/80 shadow-2xs flex flex-col items-center justify-center text-center hover:border-red-300 hover:shadow-md transition-all active:scale-95 group h-28 sm:h-36 cursor-pointer"
                 >
                   <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-full bg-slate-50 flex items-center justify-center text-slate-700 group-hover:text-[#D92228] group-hover:bg-red-50 transition-colors mb-2">
@@ -116,6 +128,46 @@ export function SupportScreen() {
           </div>
         </div>
       </div>
+
+      {/* On-Screen Modal: Not Working Right Now */}
+      {activeModalTile && (
+        <div 
+          onClick={() => setActiveModalTile(null)}
+          className="absolute inset-0 z-50 bg-slate-900/50 backdrop-blur-xs flex items-center justify-center p-4 animate-fade-in"
+        >
+          <div 
+            onClick={(e) => e.stopPropagation()}
+            className="bg-white w-full max-w-[280px] rounded-3xl p-5 shadow-2xl border border-slate-100 flex flex-col items-center text-center relative"
+          >
+            <button
+              onClick={() => setActiveModalTile(null)}
+              className="absolute top-3 right-3 p-1 text-slate-400 hover:text-slate-600 rounded-full hover:bg-slate-100 cursor-pointer"
+              aria-label="Close"
+            >
+              <X className="w-4 h-4" />
+            </button>
+
+            <div className="w-12 h-12 rounded-2xl bg-amber-50 text-amber-500 flex items-center justify-center mb-3">
+              <AlertCircle className="w-6 h-6 stroke-[2.2]" />
+            </div>
+
+            <h3 className="text-sm font-bold text-slate-900">
+              Not Working Right Now
+            </h3>
+
+            <p className="text-xs text-slate-500 mt-2 leading-relaxed px-1">
+              <span className="font-semibold text-slate-700">{activeModalTile.title.replace('\n', ' ')}</span> is currently not working right now. We are updating the resources.
+            </p>
+
+            <button
+              onClick={() => setActiveModalTile(null)}
+              className="mt-4 w-full py-2.5 text-xs font-bold text-white bg-[#D92228] hover:bg-red-700 rounded-xl shadow-md shadow-red-900/20 active:scale-98 transition-all cursor-pointer"
+            >
+              OK
+            </button>
+          </div>
+        </div>
+      )}
 
       <BottomNav activeScreen="account" />
     </div>
