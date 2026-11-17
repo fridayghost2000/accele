@@ -99,7 +99,7 @@ export function OrdersScreen() {
               <p className="text-xs text-slate-400">No orders in this status</p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
+            <div className="space-y-3">
               {filteredOrders.map((order) => (
                 <div
                   key={order.id}
