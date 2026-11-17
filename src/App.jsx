@@ -3,6 +3,7 @@ import { AppProvider, useApp } from '@/context/AppContext'
 import { Iphone15Pro } from '@/components/ui/Iphone15Pro'
 import { StatusBar } from '@/components/ui/StatusBar'
 import { HomeScreen } from '@/features/home/HomeScreen'
+import { CategoriesScreen } from '@/features/catalog/CategoriesScreen'
 import { CatalogScreen } from '@/features/catalog/CatalogScreen'
 import { ProductDetailsScreen } from '@/features/product-details/ProductDetailsScreen'
 import { CartScreen } from '@/features/cart/CartScreen'
@@ -16,6 +17,7 @@ import { MoreMenuScreen } from '@/features/menu/MoreMenuScreen'
 // Screen Registry
 const SCREENS = {
   'home': HomeScreen,
+  'categories': CategoriesScreen,
   'catalog': CatalogScreen,
   'product-details': ProductDetailsScreen,
   'cart': CartScreen,

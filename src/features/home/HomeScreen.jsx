@@ -155,6 +155,19 @@ export function HomeScreen() {
 
         {/* Categories Section */}
         <div>
+          <div className="flex items-center justify-between mb-2.5">
+            <h3 className="text-xs font-bold text-slate-900 tracking-tight">
+              Categories
+            </h3>
+            <button
+              onClick={() => navigateTo('categories')}
+              className="text-[11px] font-bold text-[#D92228] hover:text-red-700 inline-flex items-center gap-0.5 active:scale-95 cursor-pointer"
+            >
+              See All
+              <ChevronRight className="w-3.5 h-3.5" />
+            </button>
+          </div>
+
           <div className="grid grid-cols-4 gap-2.5">
             {categories.map((cat) => {
               const Icon = cat.icon

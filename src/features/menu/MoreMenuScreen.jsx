@@ -19,6 +19,7 @@ export function MoreMenuScreen() {
 
   const links = [
     { id: 'home', label: 'Home', icon: Home, screen: 'home' },
+    { id: 'categories', label: 'All Categories', icon: LayoutGrid, screen: 'categories' },
     { id: 'products', label: 'Products', icon: LayoutGrid, screen: 'catalog' },
     { id: 'catalog', label: 'Product Catalog', icon: FileText, screen: 'catalog' },
     { id: 'support', label: 'Support', icon: Headphones, screen: 'support' },
