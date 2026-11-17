@@ -443,54 +443,77 @@ export function HomeScreen() {
         </div>
       </div>
 
-      {/* Catalog PDF Download Modal */}
+      {/* Full-Screen Catalog PDF Download View */}
       {showCatalogModal && (
-        <div className="absolute inset-0 z-50 bg-slate-900/50 backdrop-blur-xs flex items-end sm:items-center justify-center p-3 animate-fade-in">
-          <div className="bg-white w-full max-w-sm rounded-3xl p-5 shadow-2xl border border-slate-100 space-y-4">
-            <div className="flex items-center justify-between">
-              <div className="w-10 h-10 rounded-2xl bg-red-50 text-[#D92228] flex items-center justify-center">
-                <FileDown className="w-5 h-5 stroke-[2]" />
+        <div className="absolute inset-0 z-50 bg-[#F8F9FA] flex flex-col animate-fade-in">
+          {/* Header */}
+          <div className="bg-white border-b border-slate-100 px-4 py-3 flex items-center justify-between shrink-0">
+            <button
+              onClick={() => setShowCatalogModal(false)}
+              className="p-1 -ml-1 text-slate-700 hover:text-slate-900 rounded-lg active:scale-95 cursor-pointer"
+              aria-label="Back"
+            >
+              <ChevronLeft className="w-6 h-6 stroke-[2]" />
+            </button>
+            <h2 className="text-sm font-bold text-slate-900 tracking-tight">
+              Master Product Catalog
+            </h2>
+            <button
+              onClick={() => setShowCatalogModal(false)}
+              className="p-1.5 text-slate-400 hover:text-slate-600 rounded-full hover:bg-slate-100 cursor-pointer"
+            >
+              <X className="w-5 h-5 stroke-[2]" />
+            </button>
+          </div>
+
+          {/* Full Screen Body */}
+          <div className="flex-1 overflow-y-auto p-4 space-y-4 no-scrollbar">
+            <div className="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-2xs space-y-3">
+              <div className="w-12 h-12 rounded-2xl bg-red-50 text-[#D92228] flex items-center justify-center">
+                <FileDown className="w-6 h-6 stroke-[2]" />
               </div>
-              <button 
-                onClick={() => setShowCatalogModal(false)}
-                className="p-1.5 text-slate-400 hover:text-slate-600 rounded-full hover:bg-slate-100"
-              >
-                <X className="w-4 h-4" />
-              </button>
-            </div>
 
-            <div>
-              <h3 className="text-sm font-bold text-slate-900">
-                Accele 2026 Master Catalog
-              </h3>
-              <p className="text-xs text-slate-500 mt-1 leading-relaxed">
-                Download the official comprehensive product catalog covering all 19 automotive categories, technical specs, and wiring harnesses.
-              </p>
-            </div>
-
-            <div className="bg-slate-50 rounded-2xl p-3 border border-slate-100 flex items-center justify-between text-xs">
-              <div className="flex items-center gap-2">
-                <FileText className="w-4 h-4 text-slate-500" />
-                <span className="font-semibold text-slate-700">Accele_Catalog_2026.pdf</span>
+              <div>
+                <span className="text-[10px] font-bold text-[#D92228] uppercase tracking-wider">Official 2026 Edition</span>
+                <h3 className="text-base font-bold text-slate-900 mt-0.5">
+                  Accele Electronics Master Catalog
+                </h3>
+                <p className="text-xs text-slate-500 mt-1.5 leading-relaxed">
+                  Download the complete comprehensive product catalog covering all 19 automotive categories, wiring diagrams, OE pinout references, and technical specifications.
+                </p>
               </div>
-              <span className="text-[11px] text-slate-400 font-medium">18.4 MB</span>
+
+              <div className="bg-slate-50 rounded-xl p-3 border border-slate-100 flex items-center justify-between text-xs">
+                <div className="flex items-center gap-2.5">
+                  <FileText className="w-4 h-4 text-slate-600" />
+                  <div>
+                    <p className="font-semibold text-slate-800">Accele_Catalog_2026.pdf</p>
+                    <p className="text-[10px] text-slate-400">High-Resolution PDF</p>
+                  </div>
+                </div>
+                <span className="text-[11px] font-bold text-slate-600 bg-white px-2 py-1 rounded-md border border-slate-200">18.4 MB</span>
+              </div>
             </div>
 
-            <div className="flex gap-2.5 pt-1">
-              <button
-                onClick={() => setShowCatalogModal(false)}
-                className="flex-1 py-2.5 text-xs font-bold text-slate-600 bg-slate-100 hover:bg-slate-200 rounded-xl transition-colors cursor-pointer"
-              >
-                Close
-              </button>
+            <div className="bg-white rounded-2xl p-4 border border-slate-200/80 shadow-2xs space-y-2">
+              <h4 className="text-xs font-bold text-slate-900">What's Included:</h4>
+              <ul className="text-xs text-slate-600 space-y-1.5 list-disc list-inside">
+                <li>All 19 Official Product Categories & Part Numbers</li>
+                <li>Wiring Harness Pinouts & Color Codes</li>
+                <li>Commercial 24V Fleet Systems & Mobile DVRs</li>
+                <li>Radar Blind Spot & ADAS Camera Specifications</li>
+              </ul>
+            </div>
+
+            <div className="pt-2">
               <a
                 href="https://accele.com/product-catalog/"
                 target="_blank"
                 rel="noreferrer"
-                onClick={() => setShowCatalogModal(false)}
-                className="flex-1 py-2.5 text-xs font-bold text-white bg-[#D92228] hover:bg-red-700 rounded-xl inline-flex items-center justify-center gap-1.5 shadow-md shadow-red-900/20 transition-all cursor-pointer"
+                className="w-full py-3 text-xs font-bold text-white bg-[#D92228] hover:bg-red-700 rounded-xl inline-flex items-center justify-center gap-2 shadow-md shadow-red-900/20 active:scale-98 transition-all cursor-pointer"
               >
-                Download PDF
+                <FileDown className="w-4 h-4" />
+                Download Catalog (PDF)
                 <ExternalLink className="w-3.5 h-3.5" />
               </a>
             </div>
@@ -498,60 +521,106 @@ export function HomeScreen() {
         </div>
       )}
 
-      {/* Dealer & Wholesale Inquiry Modal */}
+      {/* Full-Screen Dealer & Wholesale Inquiry View */}
       {showDealerModal && (
-        <div className="absolute inset-0 z-50 bg-slate-900/50 backdrop-blur-xs flex items-end sm:items-center justify-center p-3 animate-fade-in">
-          <div className="bg-white w-full max-w-sm rounded-3xl p-5 shadow-2xl border border-slate-100">
-            <div className="flex items-center justify-between mb-3">
-              <div className="flex items-center gap-2">
-                <div className="w-9 h-9 rounded-2xl bg-red-50 text-[#D92228] flex items-center justify-center">
-                  <Building2 className="w-4 h-4 stroke-[2]" />
-                </div>
-                <div>
-                  <h3 className="text-xs font-bold text-slate-900">
-                    Dealer & Wholesale Portal
-                  </h3>
-                  <p className="text-[10px] text-slate-400">Accele Electronics B2B</p>
-                </div>
-              </div>
-              <button 
-                onClick={() => {
-                  setShowDealerModal(false)
-                  setDealerSubmitted(false)
-                }}
-                className="p-1.5 text-slate-400 hover:text-slate-600 rounded-full hover:bg-slate-100"
-              >
-                <X className="w-4 h-4" />
-              </button>
+        <div className="absolute inset-0 z-50 bg-[#F8F9FA] flex flex-col animate-fade-in">
+          {/* Header */}
+          <div className="bg-white border-b border-slate-100 px-4 py-3 flex items-center justify-between shrink-0">
+            <button
+              onClick={() => {
+                setShowDealerModal(false)
+                setDealerSubmitted(false)
+              }}
+              className="p-1 -ml-1 text-slate-700 hover:text-slate-900 rounded-lg active:scale-95 cursor-pointer"
+              aria-label="Back"
+            >
+              <ChevronLeft className="w-6 h-6 stroke-[2]" />
+            </button>
+            <div className="text-center">
+              <h2 className="text-sm font-bold text-slate-900 tracking-tight">
+                Dealer & Wholesale Portal
+              </h2>
+              <p className="text-[9.5px] text-slate-400 font-medium">Accele Electronics B2B</p>
             </div>
+            <button
+              onClick={() => {
+                setShowDealerModal(false)
+                setDealerSubmitted(false)
+              }}
+              className="p-1.5 text-slate-400 hover:text-slate-600 rounded-full hover:bg-slate-100 cursor-pointer"
+            >
+              <X className="w-5 h-5 stroke-[2]" />
+            </button>
+          </div>
 
+          {/* Full Screen Body */}
+          <div className="flex-1 overflow-y-auto p-4 sm:p-5 no-scrollbar">
             {dealerSubmitted ? (
-              <div className="py-6 text-center space-y-2">
-                <div className="w-12 h-12 rounded-full bg-emerald-50 text-emerald-600 mx-auto flex items-center justify-center">
-                  <CheckCircle2 className="w-6 h-6 stroke-[2.5]" />
+              <div className="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-2xs text-center space-y-3 mt-6">
+                <div className="w-14 h-14 rounded-full bg-emerald-50 text-emerald-600 mx-auto flex items-center justify-center">
+                  <CheckCircle2 className="w-7 h-7 stroke-[2.5]" />
                 </div>
-                <h4 className="text-xs font-bold text-slate-900">Application Received!</h4>
-                <p className="text-[11px] text-slate-500 leading-relaxed px-4">
-                  Thank you! An Accele representative will review your business credentials and contact you within 24 hours.
+                <h3 className="text-base font-bold text-slate-900">Application Received!</h3>
+                <p className="text-xs text-slate-500 leading-relaxed px-2">
+                  Thank you for applying. An Accele commercial account representative will review your credentials and contact you within 24 business hours with wholesale pricing tiers.
                 </p>
+                <div className="pt-3">
+                  <button
+                    onClick={() => {
+                      setShowDealerModal(false)
+                      setDealerSubmitted(false)
+                    }}
+                    className="w-full py-2.5 text-xs font-bold text-white bg-[#D92228] hover:bg-red-700 rounded-xl transition-all cursor-pointer"
+                  >
+                    Done
+                  </button>
+                </div>
               </div>
             ) : (
-              <form onSubmit={handleDealerSubmit} className="space-y-2.5">
-                <div>
-                  <label className="text-[10px] font-bold text-slate-600 uppercase tracking-wider block mb-1">
-                    Business / Shop Name *
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    placeholder="e.g. Apex 12V Audio & Customs"
-                    value={dealerForm.businessName}
-                    onChange={(e) => setDealerForm({ ...dealerForm, businessName: e.target.value })}
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-red-500"
-                  />
+              <form onSubmit={handleDealerSubmit} className="space-y-3.5">
+                <div className="bg-white rounded-2xl p-4 border border-slate-200/80 shadow-2xs space-y-3">
+                  <div className="flex items-center gap-2 pb-1 border-b border-slate-100">
+                    <Building2 className="w-4 h-4 text-[#D92228]" />
+                    <span className="text-xs font-bold text-slate-900">Company Information</span>
+                  </div>
+
+                  <div>
+                    <label className="text-[10px] font-bold text-slate-600 uppercase tracking-wider block mb-1">
+                      Business / Shop Name *
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      placeholder="e.g. Apex 12V Audio & Customs"
+                      value={dealerForm.businessName}
+                      onChange={(e) => setDealerForm({ ...dealerForm, businessName: e.target.value })}
+                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-red-500"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="text-[10px] font-bold text-slate-600 uppercase tracking-wider block mb-1">
+                      Account Type *
+                    </label>
+                    <select
+                      value={dealerForm.businessType}
+                      onChange={(e) => setDealerForm({ ...dealerForm, businessType: e.target.value })}
+                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-xs text-slate-800 focus:outline-none focus:border-red-500"
+                    >
+                      <option value="Professional 12V Installer">Professional 12V Installer</option>
+                      <option value="Auto Dealership / Restyler">Auto Dealership / Restyler</option>
+                      <option value="Commercial Fleet Operator">Commercial Fleet Operator</option>
+                      <option value="Online / Brick Retailer">Online / Brick Retailer</option>
+                    </select>
+                  </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-2">
+                <div className="bg-white rounded-2xl p-4 border border-slate-200/80 shadow-2xs space-y-3">
+                  <div className="flex items-center gap-2 pb-1 border-b border-slate-100">
+                    <ShieldCheck className="w-4 h-4 text-[#D92228]" />
+                    <span className="text-xs font-bold text-slate-900">Contact Details</span>
+                  </div>
+
                   <div>
                     <label className="text-[10px] font-bold text-slate-600 uppercase tracking-wider block mb-1">
                       Contact Name *
@@ -559,61 +628,47 @@ export function HomeScreen() {
                     <input
                       type="text"
                       required
-                      placeholder="Your name"
+                      placeholder="Your full name"
                       value={dealerForm.contactName}
                       onChange={(e) => setDealerForm({ ...dealerForm, contactName: e.target.value })}
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-red-500"
+                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-red-500"
                     />
                   </div>
-                  <div>
-                    <label className="text-[10px] font-bold text-slate-600 uppercase tracking-wider block mb-1">
-                      Phone Number *
-                    </label>
-                    <input
-                      type="tel"
-                      required
-                      placeholder="(555) 000-0000"
-                      value={dealerForm.phone}
-                      onChange={(e) => setDealerForm({ ...dealerForm, phone: e.target.value })}
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-red-500"
-                    />
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                      <label className="text-[10px] font-bold text-slate-600 uppercase tracking-wider block mb-1">
+                        Phone Number *
+                      </label>
+                      <input
+                        type="tel"
+                        required
+                        placeholder="(555) 000-0000"
+                        value={dealerForm.phone}
+                        onChange={(e) => setDealerForm({ ...dealerForm, phone: e.target.value })}
+                        className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-red-500"
+                      />
+                    </div>
+                    <div>
+                      <label className="text-[10px] font-bold text-slate-600 uppercase tracking-wider block mb-1">
+                        Business Email *
+                      </label>
+                      <input
+                        type="email"
+                        required
+                        placeholder="dealer@company.com"
+                        value={dealerForm.email}
+                        onChange={(e) => setDealerForm({ ...dealerForm, email: e.target.value })}
+                        className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-red-500"
+                      />
+                    </div>
                   </div>
                 </div>
 
-                <div>
-                  <label className="text-[10px] font-bold text-slate-600 uppercase tracking-wider block mb-1">
-                    Business Email *
-                  </label>
-                  <input
-                    type="email"
-                    required
-                    placeholder="dealer@company.com"
-                    value={dealerForm.email}
-                    onChange={(e) => setDealerForm({ ...dealerForm, email: e.target.value })}
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-red-500"
-                  />
-                </div>
-
-                <div>
-                  <label className="text-[10px] font-bold text-slate-600 uppercase tracking-wider block mb-1">
-                    Account Type
-                  </label>
-                  <select
-                    value={dealerForm.businessType}
-                    onChange={(e) => setDealerForm({ ...dealerForm, businessType: e.target.value })}
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-800 focus:outline-none focus:border-red-500"
-                  >
-                    <option value="Professional 12V Installer">Professional 12V Installer</option>
-                    <option value="Auto Dealership / Restyler">Auto Dealership / Restyler</option>
-                    <option value="Commercial Fleet Operator">Commercial Fleet Operator</option>
-                    <option value="Online / Brick Retailer">Online / Brick Retailer</option>
-                  </select>
-                </div>
-
-                <div className="pt-2">
+                <div className="pt-1">
                   <button
                     type="submit"
-                    className="w-full py-2.5 text-xs font-bold text-white bg-[#D92228] hover:bg-red-700 rounded-xl shadow-md shadow-red-900/20 active:scale-98 transition-all cursor-pointer flex items-center justify-center gap-1.5"
+                    className="w-full py-3 text-xs font-bold text-white bg-[#D92228] hover:bg-red-700 rounded-xl shadow-md shadow-red-900/20 active:scale-98 transition-all cursor-pointer flex items-center justify-center gap-1.5"
                   >
                     <ShieldCheck className="w-4 h-4" />
                     Submit Dealer Application
