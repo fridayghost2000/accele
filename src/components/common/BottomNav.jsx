@@ -36,7 +36,7 @@ export function BottomNav({ activeScreen, isMoreActive = false }) {
 
   return (
     <div className="w-full bg-white border-t border-slate-100 shrink-0 z-30 select-none pb-1">
-      <div className="flex items-center justify-around py-1.5 px-2">
+      <div className="flex items-center justify-around py-1.5 px-1">
         {navItems.map((item) => {
           const Icon = item.icon
           const isActive = 
@@ -51,23 +51,23 @@ export function BottomNav({ activeScreen, isMoreActive = false }) {
             <button
               key={item.id}
               onClick={() => navigateTo(item.id)}
-              className="flex flex-col items-center justify-center py-0.5 px-2 relative transition-colors group"
+              className="flex flex-col items-center justify-center py-0.5 px-2.5 relative transition-colors group cursor-pointer"
             >
               <div className="relative">
                 <Icon
-                  className={`w-5 h-5 transition-transform duration-150 ${
-                    isActive ? 'text-[#D92228] stroke-[2.4] scale-105' : 'text-slate-400 group-hover:text-slate-600 stroke-[1.8]'
+                  className={`w-[19px] h-[19px] transition-transform duration-150 ${
+                    isActive ? 'text-[#D92228] stroke-[2.4]' : 'text-slate-400 group-hover:text-slate-600 stroke-[1.8]'
                   }`}
                 />
                 {item.badge && (
-                  <span className="absolute -top-1.5 -right-2 bg-[#D92228] text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center shadow-xs">
+                  <span className="absolute -top-1 -right-2 bg-[#D92228] text-white text-[9px] font-bold w-3.5 h-3.5 rounded-full flex items-center justify-center shadow-xs">
                     {item.badge}
                   </span>
                 )}
               </div>
               <span
-                className={`text-[10px] mt-0.5 font-medium transition-colors ${
-                  isActive ? 'text-[#D92228] font-bold' : 'text-slate-400 group-hover:text-slate-600'
+                className={`text-[9.5px] mt-0.5 tracking-tight transition-colors ${
+                  isActive ? 'text-[#D92228] font-bold' : 'text-slate-400 group-hover:text-slate-600 font-medium'
                 }`}
               >
                 {item.label}
@@ -78,8 +78,8 @@ export function BottomNav({ activeScreen, isMoreActive = false }) {
       </div>
 
       {/* iOS Home Indicator Bar */}
-      <div className="flex justify-center pb-1">
-        <div className="w-32 h-1 bg-slate-900/80 rounded-full"></div>
+      <div className="flex justify-center pb-0.5">
+        <div className="w-28 h-1 bg-slate-900/80 rounded-full"></div>
       </div>
     </div>
   )
