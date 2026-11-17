@@ -13,10 +13,7 @@ import { NotificationsScreen } from '@/features/notifications/NotificationsScree
 import { MoreMenuScreen } from '@/features/menu/MoreMenuScreen'
 import { 
   Compass, 
-  RotateCcw, 
   ChevronRight, 
-  Layers, 
-  Sparkles,
   ExternalLink
 } from 'lucide-react'
 
@@ -35,20 +32,20 @@ const SCREENS = [
 ]
 
 function PhoneViewport() {
-  const { activeScreen, setActiveScreen, cartCount } = useApp()
+  const { activeScreen, setActiveScreen } = useApp()
   const [showQuickNav, setShowQuickNav] = useState(false)
 
   const activeIndex = SCREENS.findIndex((s) => s.id === activeScreen)
   const ActiveComponent = SCREENS[activeIndex >= 0 ? activeIndex : 0].component
 
   return (
-    <div className="h-screen w-screen overflow-hidden bg-[#0B0F19] flex flex-col items-center justify-center relative select-none font-sans">
+    <div className="h-screen w-screen overflow-hidden bg-[#0B0F19] flex flex-col items-center justify-between py-3 relative select-none font-sans">
       {/* Subtle Ambient Radial Glow behind Phone */}
       <div className="absolute w-[500px] h-[700px] bg-gradient-to-tr from-red-600/10 via-indigo-500/5 to-slate-800/10 rounded-full blur-[120px] pointer-events-none"></div>
 
-      {/* Floating Top Mini Bar (Very subtle branding & screen indicator) */}
-      <header className="absolute top-4 inset-x-0 z-40 flex items-center justify-between px-6 pointer-events-none">
-        <div className="flex items-center gap-2.5 pointer-events-auto">
+      {/* Floating Top Mini Bar */}
+      <header className="w-full max-w-5xl z-40 flex items-center justify-between px-6 shrink-0">
+        <div className="flex items-center gap-2.5">
           <div className="w-2 h-2 rounded-full bg-[#D92228] animate-pulse"></div>
           <span className="text-xs font-black tracking-tight text-white/90 uppercase">
             Accele Electronics
@@ -59,10 +56,10 @@ function PhoneViewport() {
         </div>
 
         {/* Quick Screen Navigator Toggle */}
-        <div className="flex items-center gap-2 pointer-events-auto">
+        <div className="flex items-center gap-2">
           <button
             onClick={() => setShowQuickNav(!showQuickNav)}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-900/90 text-slate-200 border border-slate-700/80 hover:bg-slate-800 hover:text-white shadow-lg transition-all active:scale-95"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-900/90 text-slate-200 border border-slate-700/80 hover:bg-slate-800 hover:text-white shadow-lg transition-all active:scale-95 cursor-pointer"
           >
             <Compass className="w-3.5 h-3.5 text-[#D92228]" />
             <span>Switch Screen</span>
@@ -87,7 +84,7 @@ function PhoneViewport() {
               </div>
               <button
                 onClick={() => setShowQuickNav(false)}
-                className="text-xs font-semibold text-slate-400 hover:text-white px-2 py-1 rounded-lg bg-slate-800"
+                className="text-xs font-semibold text-slate-400 hover:text-white px-2 py-1 rounded-lg bg-slate-800 cursor-pointer"
               >
                 ✕ Close
               </button>
@@ -101,7 +98,7 @@ function PhoneViewport() {
                     setActiveScreen(s.id)
                     setShowQuickNav(false)
                   }}
-                  className={`text-left p-2.5 rounded-xl text-xs font-medium transition-all flex items-center justify-between ${
+                  className={`text-left p-2.5 rounded-xl text-xs font-medium transition-all flex items-center justify-between cursor-pointer ${
                     activeScreen === s.id
                       ? 'bg-[#D92228] text-white font-bold shadow-md'
                       : 'bg-slate-800/80 text-slate-300 hover:bg-slate-700'
@@ -132,17 +129,17 @@ function PhoneViewport() {
       )}
 
       {/* CENTERPIECE: MAGIC UI IPHONE 15 PRO (MATCHING IMAGE 1 REFERENCE) */}
-      <main className="relative z-10 flex items-center justify-center h-full max-h-[92vh] py-3">
-        <div className="h-full aspect-[433/882] max-h-[850px] flex items-center justify-center">
-          <Iphone15Pro className="h-full w-auto">
+      <main className="relative z-10 flex-1 flex items-center justify-center w-full min-h-0 py-1">
+        <div className="h-full max-h-[820px] w-auto aspect-[433/882] flex items-center justify-center">
+          <Iphone15Pro className="h-full w-full">
             <ActiveComponent />
           </Iphone15Pro>
         </div>
       </main>
 
       {/* Floating Bottom Indicator */}
-      <footer className="absolute bottom-3 inset-x-0 z-40 flex items-center justify-center pointer-events-none">
-        <div className="bg-slate-900/80 backdrop-blur-md border border-slate-800/80 px-4 py-1.5 rounded-full flex items-center gap-3 text-[11px] text-slate-400 pointer-events-auto shadow-lg">
+      <footer className="w-full z-40 flex items-center justify-center shrink-0">
+        <div className="bg-slate-900/80 backdrop-blur-md border border-slate-800/80 px-4 py-1.5 rounded-full flex items-center gap-3 text-[11px] text-slate-400 shadow-lg">
           <span>Tap buttons, tabs & cards inside the iPhone to navigate</span>
           <span className="text-slate-600">•</span>
           <button
