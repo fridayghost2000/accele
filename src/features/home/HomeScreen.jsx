@@ -32,7 +32,34 @@ export function HomeScreen() {
     { id: 'Sensors', label: 'Sensors', icon: Radio },
   ]
 
-  const featured = PRODUCTS.filter((p) => p.isFeatured)
+  const featured = PRODUCTS.filter((p) => p.isFeatured).slice(0, 4)
+
+  const sliderRef = React.useRef(null)
+  const isDown = React.useRef(false)
+  const startX = React.useRef(0)
+  const scrollLeftPos = React.useRef(0)
+  const hasMoved = React.useRef(false)
+
+  const onMouseDown = (e) => {
+    isDown.current = true
+    hasMoved.current = false
+    startX.current = e.pageX - sliderRef.current.offsetLeft
+    scrollLeftPos.current = sliderRef.current.scrollLeft
+  }
+
+  const onMouseMove = (e) => {
+    if (!isDown.current) return
+    const x = e.pageX - sliderRef.current.offsetLeft
+    const walk = (x - startX.current) * 1.4
+    if (Math.abs(walk) > 5) {
+      hasMoved.current = true
+    }
+    sliderRef.current.scrollLeft = scrollLeftPos.current - walk
+  }
+
+  const onMouseUp = () => {
+    isDown.current = false
+  }
 
   const handleCategoryClick = (catId) => {
     setSelectedCategory(catId)
@@ -167,13 +194,23 @@ export function HomeScreen() {
             </button>
           </div>
 
-          {/* Featured Products Grid: Exactly 2 columns */}
-          <div className="grid grid-cols-2 gap-3">
+          {/* Featured Products Horizontal Slider: 2 in front, 3rd peeking, 4 total */}
+          <div
+            ref={sliderRef}
+            onMouseDown={onMouseDown}
+            onMouseMove={onMouseMove}
+            onMouseUp={onMouseUp}
+            onMouseLeave={onMouseUp}
+            className="-mx-4 px-4 flex gap-2.5 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory pb-2 pt-0.5 cursor-grab active:cursor-grabbing select-none"
+          >
             {featured.map((prod) => (
               <div
                 key={prod.id}
-                onClick={() => navigateTo('product-details', prod)}
-                className="bg-white rounded-2xl p-3 border border-slate-200/80 shadow-2xs hover:shadow-md transition-all cursor-pointer group flex flex-col justify-between"
+                onClick={() => {
+                  if (hasMoved.current) return
+                  navigateTo('product-details', prod)
+                }}
+                className="w-[154px] min-w-[154px] shrink-0 snap-start bg-white rounded-2xl p-3 border border-slate-200/80 shadow-2xs hover:shadow-md transition-all cursor-pointer group flex flex-col justify-between"
               >
                 <div className="h-24 w-full flex items-center justify-center bg-slate-50/50 rounded-xl overflow-hidden p-1">
                   <ProductGraphic type={prod.type} className="w-full h-full object-contain group-hover:scale-105 transition-transform" />
@@ -193,6 +230,8 @@ export function HomeScreen() {
                 </div>
               </div>
             ))}
+            {/* End spacer so the 4th item can scroll with clean right margin */}
+            <div className="w-2 shrink-0" aria-hidden="true" />
           </div>
         </div>
       </div>
