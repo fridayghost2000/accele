@@ -201,7 +201,7 @@ export function HomeScreen() {
             onMouseMove={onMouseMove}
             onMouseUp={onMouseUp}
             onMouseLeave={onMouseUp}
-            className="-mx-4 px-4 flex gap-2.5 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory pb-2 pt-0.5 cursor-grab active:cursor-grabbing select-none"
+            className="flex gap-2.5 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory pb-2 pt-0.5 -mr-4 pr-4 cursor-grab active:cursor-grabbing select-none"
           >
             {featured.map((prod) => (
               <div
@@ -210,7 +210,7 @@ export function HomeScreen() {
                   if (hasMoved.current) return
                   navigateTo('product-details', prod)
                 }}
-                className="w-[154px] min-w-[154px] shrink-0 snap-start bg-white rounded-2xl p-3 border border-slate-200/80 shadow-2xs hover:shadow-md transition-all cursor-pointer group flex flex-col justify-between"
+                className="w-[148px] min-w-[148px] shrink-0 snap-start bg-white rounded-2xl p-3 border border-slate-200/80 shadow-2xs hover:shadow-md transition-all cursor-pointer group flex flex-col justify-between"
               >
                 <div className="h-24 w-full flex items-center justify-center bg-slate-50/50 rounded-xl overflow-hidden p-1">
                   <ProductGraphic type={prod.type} className="w-full h-full object-contain group-hover:scale-105 transition-transform" />
@@ -231,7 +231,7 @@ export function HomeScreen() {
               </div>
             ))}
             {/* End spacer so the 4th item can scroll with clean right margin */}
-            <div className="w-2 shrink-0" aria-hidden="true" />
+            <div className="w-4 shrink-0" aria-hidden="true" />
           </div>
         </div>
       </div>
