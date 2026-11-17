@@ -156,50 +156,25 @@ export function CategoriesScreen() {
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-2 gap-2.5">
+          <div className="grid grid-cols-2 gap-3">
             {filteredCategories.map((cat) => {
               const Icon = ICON_MAP[cat.icon] || Camera
-              const count = getProductCount(cat.id)
 
               return (
                 <div
                   key={cat.id}
                   onClick={() => handleSelectCategory(cat.id)}
-                  className="bg-white rounded-2xl p-3 border border-slate-200/80 shadow-2xs hover:shadow-md hover:border-red-300 transition-all cursor-pointer group flex flex-col justify-between"
+                  className="bg-white rounded-2xl p-4 border border-slate-200/80 shadow-2xs hover:shadow-md hover:border-red-400 group transition-all flex flex-col items-center text-center cursor-pointer active:scale-95"
                 >
-                  <div>
-                    {/* Top row: Icon + Count Pill */}
-                    <div className="flex items-center justify-between">
-                      <div className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center text-slate-700 group-hover:bg-red-50 group-hover:text-[#D92228] transition-colors">
-                        <Icon className="w-5 h-5 stroke-[1.8]" />
-                      </div>
-                      {count > 0 ? (
-                        <span className="text-[9px] font-bold bg-red-50 text-[#D92228] px-2 py-0.5 rounded-full">
-                          {count} {count === 1 ? 'item' : 'items'}
-                        </span>
-                      ) : (
-                        <span className="text-[9px] font-semibold text-slate-400 bg-slate-100 px-1.5 py-0.5 rounded-full">
-                          Browse
-                        </span>
-                      )}
-                    </div>
-
-                    {/* Title */}
-                    <h3 className="text-xs font-bold text-slate-900 mt-2.5 leading-snug group-hover:text-[#D92228] transition-colors line-clamp-1">
-                      {cat.label}
-                    </h3>
-
-                    {/* Subcategories */}
-                    <p className="text-[9px] text-slate-400 font-medium mt-1 line-clamp-2 leading-relaxed">
-                      {cat.subcategories}
-                    </p>
+                  {/* Clean Icon Badge */}
+                  <div className="w-14 h-14 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center text-slate-700 group-hover:bg-red-50 group-hover:text-[#D92228] group-hover:border-red-200 transition-all mb-2.5">
+                    <Icon className="w-6 h-6 stroke-[1.8]" />
                   </div>
 
-                  {/* Bottom explore link */}
-                  <div className="mt-2.5 pt-2 border-t border-slate-100/80 flex items-center justify-between text-[10px] font-bold text-slate-500 group-hover:text-[#D92228] transition-colors">
-                    <span>View Products</span>
-                    <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-                  </div>
+                  {/* Category Name */}
+                  <h3 className="text-xs font-bold text-slate-800 group-hover:text-[#D92228] transition-colors leading-snug line-clamp-2">
+                    {cat.label}
+                  </h3>
                 </div>
               )
             })}
