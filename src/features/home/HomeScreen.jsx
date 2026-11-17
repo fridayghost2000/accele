@@ -1,6 +1,5 @@
 import React from 'react'
 import { 
-  Menu, 
   ShoppingCart, 
   Search, 
   Camera, 
@@ -45,20 +44,16 @@ export function HomeScreen() {
       <StatusBar />
 
       {/* Top Header */}
-      <div className="px-4 py-2 flex items-center justify-between bg-white border-b border-slate-100">
-        <button 
-          onClick={() => navigateTo('menu')}
-          className="p-1.5 -ml-1 text-slate-700 hover:text-slate-900 rounded-lg active:scale-95"
-          aria-label="Open Menu"
-        >
-          <Menu className="w-5 h-5 stroke-[2.2]" />
-        </button>
+      <div className="px-4 py-2.5 flex items-center justify-between bg-white border-b border-slate-100">
+        {/* Left: Official Accele Logo (Replaces 3-line hamburger icon) */}
+        <div className="flex items-center">
+          <AcceleLogo size="md" />
+        </div>
 
-        <AcceleLogo size="md" />
-
+        {/* Right: Shopping Cart Icon with Counter Badge */}
         <button 
           onClick={() => navigateTo('cart')}
-          className="p-1.5 -mr-1 text-slate-700 hover:text-slate-900 relative rounded-lg active:scale-95"
+          className="p-1.5 -mr-1 text-slate-700 hover:text-slate-900 relative rounded-lg active:scale-95 cursor-pointer"
           aria-label="Shopping Cart"
         >
           <ShoppingCart className="w-5 h-5 stroke-[2.2]" />

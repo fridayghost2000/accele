@@ -1,27 +1,18 @@
 import React from 'react'
+import logoImg from '@/assets/accele-logo.png'
 
 export function AcceleLogo({ size = "md", className = "" }) {
-  const isSmall = size === "sm"
-  const isLarge = size === "lg"
+  // Height sizing based on prop
+  const heightClass = size === "sm" ? "h-5" : size === "lg" ? "h-9" : "h-6 sm:h-7"
 
   return (
-    <div className={`inline-flex flex-col items-center justify-center select-none ${className}`}>
-      <div className="flex items-center gap-1.5">
-        {/* Speed stripes / chevron accent */}
-        <div className="flex -space-x-1 italic font-black">
-          <span className="text-amber-500 font-extrabold text-[15px] italic -rotate-12 translate-y-0.5">//</span>
-        </div>
-        <span className={`font-black italic tracking-tighter text-[#D92228] uppercase leading-none font-sans ${
-          isSmall ? 'text-sm' : isLarge ? 'text-2xl' : 'text-base'
-        }`}>
-          ACCELE
-        </span>
-      </div>
-      <span className={`font-bold tracking-widest text-slate-700 uppercase -mt-0.5 leading-none ${
-        isSmall ? 'text-[6.5px]' : isLarge ? 'text-[9px]' : 'text-[7.5px]'
-      }`}>
-        ELECTRONICS, INC.
-      </span>
+    <div className={`inline-flex items-center select-none ${className}`}>
+      <img
+        src={logoImg}
+        alt="Accele Electronics, Inc."
+        className={`${heightClass} w-auto object-contain object-left`}
+        loading="eager"
+      />
     </div>
   )
 }
