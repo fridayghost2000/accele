@@ -9,7 +9,6 @@ import {
   Droplets,
   Check
 } from 'lucide-react'
-import { StatusBar } from '@/components/ui/StatusBar'
 import { BottomNav } from '@/components/common/BottomNav'
 import { ProductGraphic } from '@/components/common/ProductGraphic'
 import { useApp } from '@/context/AppContext'
@@ -40,8 +39,6 @@ export function ProductDetailsScreen() {
 
   return (
     <div className="h-full flex flex-col bg-white text-slate-800 select-none relative">
-      <StatusBar />
-
       {/* Top Header */}
       <div className="px-4 py-2.5 flex items-center justify-between border-b border-slate-100 shrink-0">
         <button 

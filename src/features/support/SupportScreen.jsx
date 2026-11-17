@@ -8,7 +8,6 @@ import {
   Headphones,
   CheckCircle2
 } from 'lucide-react'
-import { StatusBar } from '@/components/ui/StatusBar'
 import { BottomNav } from '@/components/common/BottomNav'
 import { useApp } from '@/context/AppContext'
 
@@ -26,8 +25,6 @@ export function SupportScreen() {
 
   return (
     <div className="h-full flex flex-col bg-[#F8F9FA] text-slate-800 select-none relative">
-      <StatusBar />
-
       {/* Top Header */}
       <div className="bg-white border-b border-slate-100 shrink-0">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 py-2.5 flex items-center justify-between">

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { AppProvider, useApp } from '@/context/AppContext'
 import { Iphone15Pro } from '@/components/ui/Iphone15Pro'
+import { StatusBar } from '@/components/ui/StatusBar'
 import { HomeScreen } from '@/features/home/HomeScreen'
 import { CatalogScreen } from '@/features/catalog/CatalogScreen'
 import { ProductDetailsScreen } from '@/features/product-details/ProductDetailsScreen'
@@ -36,9 +37,10 @@ const getDeviceMode = () => {
   // Detect touch emulation or mobile/tablet user agent
   const isTouch = navigator.maxTouchPoints > 0 || 'ontouchstart' in window
   const isTabletUA = /iPad|Tablet|PlayBook|Silk|Kindle|(Android(?!.*Mobile))/i.test(ua)
+  const isMobileUA = /Mobile|iPhone|iPod|Android.*Mobile|BlackBerry|IEMobile/i.test(ua)
   
-  // 1. Mobile devices (width < 640px)
-  if (w < 640) return 'mobile'
+  // 1. Mobile devices (width < 640px or mobile phone user agent)
+  if (w < 640 || isMobileUA) return 'mobile'
   
   // 2. Tablets (iPad Mini, iPad Pro 13, Surface Pro 10, or viewport between 640px and 1376px with touch/tablet UA)
   if (isTabletUA || (isTouch && w <= 1376) || (w >= 640 && w <= 1024)) {
@@ -87,6 +89,7 @@ function MainAppShell() {
     <div className="min-h-screen w-full bg-[#080d1a] flex items-center justify-center p-2 sm:p-4 select-none overflow-hidden font-sans">
       <div className="relative h-[min(850px,calc(100vh-28px))] aspect-[433/882] drop-shadow-[0_25px_60px_rgba(0,0,0,0.85)]">
         <Iphone15Pro className="size-full">
+          <StatusBar />
           <div className="flex-1 w-full overflow-hidden relative flex flex-col">
             <ActiveComponent isTablet={false} />
           </div>

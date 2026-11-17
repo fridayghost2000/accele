@@ -8,7 +8,6 @@ import {
   ChevronDown,
   X
 } from 'lucide-react'
-import { StatusBar } from '@/components/ui/StatusBar'
 import { BottomNav } from '@/components/common/BottomNav'
 import { ProductGraphic } from '@/components/common/ProductGraphic'
 import { useApp } from '@/context/AppContext'
@@ -47,8 +46,6 @@ export function CatalogScreen() {
 
   return (
     <div className="h-full flex flex-col bg-[#F8F9FA] text-slate-800 select-none relative">
-      <StatusBar />
-
       {/* Top Bar */}
       <div className="px-4 py-2.5 flex items-center justify-between bg-white border-b border-slate-100 shrink-0">
         <button 

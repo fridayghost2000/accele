@@ -9,7 +9,6 @@ import {
   ArrowRight,
   ChevronRight
 } from 'lucide-react'
-import { StatusBar } from '@/components/ui/StatusBar'
 import { BottomNav } from '@/components/common/BottomNav'
 import { AcceleLogo } from '@/components/common/AcceleLogo'
 import { ProductGraphic } from '@/components/common/ProductGraphic'
@@ -68,8 +67,6 @@ export function HomeScreen() {
 
   return (
     <div className="h-full flex flex-col bg-[#F8F9FA] text-slate-800 select-none">
-      <StatusBar />
-
       {/* Top Header */}
       <div className="px-4 py-2.5 flex items-center justify-between bg-white border-b border-slate-100 shrink-0">
         {/* Left: Official Accele Logo */}
