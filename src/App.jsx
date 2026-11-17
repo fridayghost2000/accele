@@ -26,20 +26,27 @@ const SCREENS = {
   'menu': MoreMenuScreen,
 }
 
+// Device detection matching native device emulation (iPad Mini, iPad Pro, Surface Pro, Mobile, Desktop)
 const getDeviceMode = () => {
   if (typeof window === 'undefined') return 'desktop'
   const w = window.innerWidth
   const h = window.innerHeight
   const ua = navigator.userAgent || ''
-  const isTablet = 
-    /iPad|Tablet|Android(?!.*Mobile)|CrKey|SmartDisplay/i.test(ua) || 
-    (navigator.maxTouchPoints > 1 && w >= 640 && w <= 1366)
   
-  return w < 640 
-    ? 'mobile' 
-    : (w >= 640 && w <= 1280) || (w <= 1366 && h <= 850) || isTablet 
-    ? 'tablet' 
-    : 'desktop'
+  // Detect touch emulation or mobile/tablet user agent
+  const isTouch = navigator.maxTouchPoints > 0 || 'ontouchstart' in window
+  const isTabletUA = /iPad|Tablet|PlayBook|Silk|Kindle|(Android(?!.*Mobile))/i.test(ua)
+  
+  // 1. Mobile devices (width < 640px)
+  if (w < 640) return 'mobile'
+  
+  // 2. Tablets (iPad Mini, iPad Pro 13, Surface Pro 10, or viewport between 640px and 1376px with touch/tablet UA)
+  if (isTabletUA || (isTouch && w <= 1376) || (w >= 640 && w <= 1024)) {
+    return 'tablet'
+  }
+  
+  // 3. Desktop (Wide monitors with mouse)
+  return 'desktop'
 }
 
 function MainAppShell() {
@@ -57,35 +64,31 @@ function MainAppShell() {
 
   const ActiveComponent = SCREENS[activeScreen] || HomeScreen
 
-  // 1. MOBILE VIEW (Viewport < 640px): Fullscreen native mobile experience
+  // 1. MOBILE VIEW (e.g. iPhone, Pixel - Viewport < 640px): Fullscreen native mobile experience
   if (deviceMode === 'mobile') {
     return (
       <div className="fixed inset-0 w-full h-full flex flex-col overflow-hidden bg-[#F8F9FA] select-none font-sans">
-        <ActiveComponent />
+        <ActiveComponent isTablet={false} />
       </div>
     )
   }
 
-  // 2. TABLET VIEW (640px - 1024px / Touch Tablets): Centered mobile app container
+  // 2. TABLET VIEW (iPad Mini 768px, iPad Pro 1024px, Surface Pro 10 912px/1440px): Fullscreen native tablet experience
   if (deviceMode === 'tablet') {
     return (
-      <div className="fixed inset-0 w-full h-full flex flex-col items-center justify-center bg-[#080d1a] overflow-hidden select-none font-sans">
-        <div className="w-full max-w-md h-full flex flex-col overflow-hidden bg-[#F8F9FA] shadow-2xl">
-          <ActiveComponent />
-        </div>
+      <div className="fixed inset-0 w-full h-full flex flex-col overflow-hidden bg-[#F8F9FA] select-none font-sans">
+        <ActiveComponent isTablet={true} />
       </div>
     )
   }
 
-  // 3. DESKTOP VIEW (Replicating https://upic-labs-app.friday-ghost2000.workers.dev/):
-  // Clean, focused #080d1a dark background with no external content,
-  // and the iPhone 15 Pro frame centered in the viewport.
+  // 3. DESKTOP VIEW: Centered iPhone 15 Pro frame with clean, pitch #080d1a background and no external clutter
   return (
     <div className="min-h-screen w-full bg-[#080d1a] flex items-center justify-center p-2 sm:p-4 select-none overflow-hidden font-sans">
       <div className="relative h-[min(850px,calc(100vh-28px))] aspect-[433/882] drop-shadow-[0_25px_60px_rgba(0,0,0,0.85)]">
         <Iphone15Pro className="size-full">
           <div className="flex-1 w-full overflow-hidden relative flex flex-col">
-            <ActiveComponent />
+            <ActiveComponent isTablet={false} />
           </div>
         </Iphone15Pro>
       </div>

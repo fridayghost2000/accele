@@ -28,24 +28,27 @@ export function CheckoutScreen() {
       <StatusBar />
 
       {/* Top Header */}
-      <div className="px-4 py-2.5 flex items-center justify-between border-b border-slate-100">
-        <button 
-          onClick={goBack} 
-          className="p-1 -ml-1 text-slate-700 hover:text-slate-900 rounded-lg active:scale-95"
-          aria-label="Back"
-        >
-          <ChevronLeft className="w-6 h-6 stroke-[2]" />
-        </button>
+      <div className="border-b border-slate-100 shrink-0">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 py-2.5 flex items-center justify-between">
+          <button 
+            onClick={goBack} 
+            className="p-1 -ml-1 text-slate-700 hover:text-slate-900 rounded-lg active:scale-95 cursor-pointer"
+            aria-label="Back"
+          >
+            <ChevronLeft className="w-6 h-6 stroke-[2]" />
+          </button>
 
-        <h1 className="text-sm font-bold text-slate-900 tracking-tight">
-          Checkout
-        </h1>
+          <h1 className="text-sm sm:text-base font-bold text-slate-900 tracking-tight">
+            Checkout
+          </h1>
 
-        <div className="w-6"></div> {/* Spacer */}
+          <div className="w-6"></div> {/* Spacer */}
+        </div>
       </div>
 
       {/* Main Content Area */}
-      <div className="flex-1 overflow-y-auto px-4 py-3 space-y-5 no-scrollbar">
+      <div className="flex-1 overflow-y-auto px-4 sm:px-6 py-4 no-scrollbar">
+        <div className="max-w-2xl mx-auto space-y-5">
         {/* 3-Step Stepper Progress Bar */}
         <div className="px-6 py-1">
           <div className="flex items-center justify-between relative">
@@ -248,10 +251,11 @@ export function CheckoutScreen() {
         <div className="pt-2 pb-4">
           <button
             onClick={placeOrder}
-            className="w-full bg-[#D92228] hover:bg-red-700 text-white font-bold py-3.5 rounded-2xl text-xs tracking-wide shadow-md shadow-red-900/20 active:scale-[0.98] transition-all"
+            className="w-full bg-[#D92228] hover:bg-red-700 text-white font-bold py-3.5 rounded-2xl text-xs sm:text-sm tracking-wide shadow-md shadow-red-900/20 active:scale-[0.98] transition-all cursor-pointer"
           >
             Place Order • ${total.toFixed(2)}
           </button>
+        </div>
         </div>
       </div>
     </div>
