@@ -102,8 +102,9 @@ export function ProductDetailsScreen() {
           {/* Rating Row */}
           <div className="flex items-center gap-1.5 pt-1">
             <div className="flex items-center gap-0.5">
-              <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
-              <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+              ))}
             </div>
             <span className="text-xs font-bold text-slate-800">
               {selectedProduct.rating}
@@ -127,34 +128,25 @@ export function ProductDetailsScreen() {
         </div>
 
         {/* 3 Circular Feature Badges Row */}
-        <div className="grid grid-cols-3 gap-3 py-1">
-          <div className="flex flex-col items-center text-center">
-            <div className="w-12 h-12 rounded-full border border-slate-200 bg-slate-50 flex items-center justify-center text-slate-700 mb-1.5 shadow-2xs">
-              <Eye className="w-5 h-5 text-slate-700 stroke-[1.8]" />
-            </div>
-            <span className="text-[11px] font-bold text-slate-800 leading-tight">
-              170° View
-            </span>
+        {selectedProduct.features && selectedProduct.features.length > 0 && (
+          <div className="grid grid-cols-3 gap-3 py-1">
+            {selectedProduct.features.slice(0, 3).map((feat, idx) => (
+              <div key={idx} className="flex flex-col items-center text-center">
+                <div className="w-12 h-12 rounded-full border border-slate-200 bg-slate-50 flex items-center justify-center text-slate-700 mb-1.5 shadow-2xs">
+                  {idx === 0 ? <Eye className="w-5 h-5 text-slate-700 stroke-[1.8]" /> :
+                   idx === 1 ? <Moon className="w-5 h-5 text-slate-700 stroke-[1.8]" /> :
+                   <Droplets className="w-5 h-5 text-slate-700 stroke-[1.8]" />}
+                </div>
+                <span className="text-[11px] font-bold text-slate-800 leading-tight">
+                  {feat.label}
+                </span>
+                <span className="text-[9px] text-slate-400 leading-tight mt-0.5 line-clamp-1">
+                  {feat.detail}
+                </span>
+              </div>
+            ))}
           </div>
-
-          <div className="flex flex-col items-center text-center">
-            <div className="w-12 h-12 rounded-full border border-slate-200 bg-slate-50 flex items-center justify-center text-slate-700 mb-1.5 shadow-2xs">
-              <Moon className="w-5 h-5 text-slate-700 stroke-[1.8]" />
-            </div>
-            <span className="text-[11px] font-bold text-slate-800 leading-tight">
-              Night Vision
-            </span>
-          </div>
-
-          <div className="flex flex-col items-center text-center">
-            <div className="w-12 h-12 rounded-full border border-slate-200 bg-slate-50 flex items-center justify-center text-slate-700 mb-1.5 shadow-2xs">
-              <Droplets className="w-5 h-5 text-slate-700 stroke-[1.8]" />
-            </div>
-            <span className="text-[11px] font-bold text-slate-800 leading-tight">
-              Waterproof
-            </span>
-          </div>
-        </div>
+        )}
 
         {/* Action Buttons */}
         <div className="space-y-2 pt-1 pb-2">

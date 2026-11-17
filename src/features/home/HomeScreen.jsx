@@ -32,7 +32,7 @@ export function HomeScreen() {
     { id: 'Sensors', label: 'Sensors', icon: Radio },
   ]
 
-  const featured = PRODUCTS.slice(0, 2)
+  const featured = PRODUCTS.filter((p) => p.isFeatured)
 
   const handleCategoryClick = (catId) => {
     setSelectedCategory(catId)
@@ -179,15 +179,15 @@ export function HomeScreen() {
                   <ProductGraphic type={prod.type} className="w-full h-full object-contain group-hover:scale-105 transition-transform" />
                 </div>
                 <div className="mt-2 flex items-end justify-between">
-                  <div>
-                    <h4 className="text-[11px] font-bold text-slate-900 leading-tight line-clamp-1">
+                  <div className="min-w-0 pr-1">
+                    <h4 className="text-[11px] font-bold text-slate-900 leading-tight truncate">
                       {prod.name}
                     </h4>
                     <p className="text-[10px] text-slate-400 font-medium">
                       {prod.model}
                     </p>
                   </div>
-                  <div className="w-5 h-5 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 group-hover:bg-[#D92228] group-hover:text-white transition-colors">
+                  <div className="w-5 h-5 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 group-hover:bg-[#D92228] group-hover:text-white transition-colors shrink-0">
                     <ArrowRight className="w-3 h-3 stroke-[2.5]" />
                   </div>
                 </div>

@@ -23,12 +23,9 @@ export function ProductGraphic({ type, className = "w-full h-full" }) {
             <stop offset="70%" stopColor="#1E3A8A" stopOpacity="0.1" />
             <stop offset="100%" stopColor="#0F172A" stopOpacity="0" />
           </radialGradient>
-          <filter id="shadowFilter" x="-10%" y="-10%" width="120%" height="130%" filterUnits="userSpaceOnUse">
-            <feDropShadow dx="0" dy="8" stdDeviation="6" floodColor="#000000" floodOpacity="0.3" />
-          </filter>
         </defs>
 
-        {/* Drop shadow */}
+        {/* Shadow */}
         <ellipse cx="100" cy="142" rx="65" ry="10" fill="#000000" opacity="0.25" />
 
         {/* Mounting Bracket */}
@@ -37,27 +34,19 @@ export function ProductGraphic({ type, className = "w-full h-full" }) {
         <circle cx="48" cy="85" r="2" fill="#4B5563" />
 
         {/* Main Camera Cube Body */}
-        <rect x="68" y="42" width="76" height="76" rx="14" fill="url(#bodyGrad)" filter="url(#shadowFilter)" stroke="#374151" strokeWidth="1.5" />
+        <rect x="68" y="42" width="76" height="76" rx="14" fill="url(#bodyGrad)" stroke="#374151" strokeWidth="1.5" />
         
         {/* Front Bezel Chamfer */}
         <rect x="74" y="48" width="64" height="64" rx="10" fill="#18191D" stroke="#23272F" strokeWidth="1" />
 
-        {/* Outer Lens Housing Ring */}
+        {/* Lens Rings */}
         <circle cx="106" cy="80" r="26" fill="url(#lensRing)" stroke="#4B5563" strokeWidth="1.5" />
         <circle cx="106" cy="80" r="21" fill="#0A0E1A" stroke="#1E293B" strokeWidth="1" />
-
-        {/* Lens Optics Glass & Flare */}
         <circle cx="106" cy="80" r="16" fill="url(#lensGlare)" />
         <circle cx="103" cy="76" r="4.5" fill="#FFFFFF" opacity="0.4" />
         <circle cx="108" cy="82" r="2" fill="#FFFFFF" opacity="0.25" />
 
-        {/* Night Vision Infrared LEDs */}
-        <circle cx="84" cy="58" r="2.5" fill="#475569" stroke="#334155" strokeWidth="0.5" />
-        <circle cx="128" cy="58" r="2.5" fill="#475569" stroke="#334155" strokeWidth="0.5" />
-        <circle cx="84" cy="102" r="2.5" fill="#475569" stroke="#334155" strokeWidth="0.5" />
-        <circle cx="128" cy="102" r="2.5" fill="#475569" stroke="#334155" strokeWidth="0.5" />
-
-        {/* Auxiliary side sensor / secondary angle housing */}
+        {/* Auxiliary side sensor */}
         <rect x="48" y="70" width="16" height="26" rx="4" fill="#1F2937" stroke="#374151" strokeWidth="1" />
         <circle cx="56" cy="83" r="4" fill="#0F172A" />
       </svg>
@@ -83,19 +72,14 @@ export function ProductGraphic({ type, className = "w-full h-full" }) {
         
         {/* Monitor Frame */}
         <rect x="25" y="24" width="150" height="96" rx="8" fill="#111827" stroke="#374151" strokeWidth="2" />
-        
-        {/* Screen Area */}
         <rect x="33" y="32" width="134" height="80" rx="4" fill="url(#monScreen)" />
         
-        {/* Sky / Horizon and Road Guide Lines */}
+        {/* Road & Parking guide lines */}
         <path d="M33 72 Q100 68 167 72 L167 112 L33 112 Z" fill="#334155" opacity="0.85" />
-        {/* Parking trajectory guide lines (Green/Yellow/Red) */}
         <path d="M70 110 L88 78" stroke="#EF4444" strokeWidth="2.5" strokeDasharray="3 2" />
         <path d="M130 110 L112 78" stroke="#EF4444" strokeWidth="2.5" strokeDasharray="3 2" />
         <path d="M78 98 L122 98" stroke="#F59E0B" strokeWidth="2" />
         <path d="M84 86 L116 86" stroke="#10B981" strokeWidth="2" />
-
-        {/* Small Accele badge on chin */}
         <rect x="90" y="114" width="20" height="2" rx="1" fill="#DC2626" />
       </svg>
     )
@@ -104,21 +88,14 @@ export function ProductGraphic({ type, className = "w-full h-full" }) {
   if (type === "lightbar") {
     return (
       <svg viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-        {/* Shadow */}
         <ellipse cx="100" cy="115" rx="80" ry="8" fill="#000000" opacity="0.2" />
-
-        {/* Light bar mount brackets */}
+        {/* Mount brackets */}
         <rect x="18" y="68" width="8" height="32" rx="2" fill="#1F2937" stroke="#374151" />
         <rect x="174" y="68" width="8" height="32" rx="2" fill="#1F2937" stroke="#374151" />
-
-        {/* Main Lightbar Extrusion */}
+        {/* Main Lightbar */}
         <rect x="22" y="62" width="156" height="36" rx="6" fill="#111827" stroke="#374151" strokeWidth="1.5" />
         <rect x="26" y="66" width="148" height="28" rx="4" fill="#0F172A" />
-
-        {/* Heat sink fins on top */}
-        <path d="M30 62 L30 58 M40 62 L40 58 M50 62 L50 58 M60 62 L60 58 M70 62 L70 58 M80 62 L80 58 M90 62 L90 58 M100 62 L100 58 M110 62 L110 58 M120 62 L120 58 M130 62 L130 58 M140 62 L140 58 M150 62 L150 58 M160 62 L160 58 M170 62 L170 58" stroke="#475569" strokeWidth="1.5" />
-
-        {/* High-power LED reflectors */}
+        {/* LEDs */}
         {[34, 48, 62, 76, 90, 104, 118, 132, 146, 160].map((x, i) => (
           <g key={i}>
             <circle cx={x} cy="75" r="4.5" fill="#FDE047" stroke="#CA8A04" strokeWidth="0.8" />
@@ -134,10 +111,7 @@ export function ProductGraphic({ type, className = "w-full h-full" }) {
   if (type === "sensors") {
     return (
       <svg viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-        {/* Shadow */}
         <ellipse cx="100" cy="122" rx="70" ry="9" fill="#000000" opacity="0.2" />
-
-        {/* 4 Sensor heads shown in perspective row */}
         {[
           { cx: 46, cy: 84, r: 18 },
           { cx: 82, cy: 82, r: 19 },
@@ -151,26 +125,67 @@ export function ProductGraphic({ type, className = "w-full h-full" }) {
             <circle cx={s.cx - 3} cy={s.cy - 3} r={2.5} fill="#94A3B8" opacity="0.4" />
           </g>
         ))}
-
-        {/* Ultrasonic wave arcs */}
         <path d="M72 52 A 32 32 0 0 1 128 52" stroke="#38BDF8" strokeWidth="2" strokeDasharray="3 3" opacity="0.8" />
-        <path d="M60 42 A 46 46 0 0 1 140 42" stroke="#38BDF8" strokeWidth="1.5" strokeDasharray="4 4" opacity="0.5" />
       </svg>
     )
   }
 
-  // Fallback Mirror DVR
+  if (type === "mirror") {
+    return (
+      <svg viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+        <ellipse cx="100" cy="120" rx="75" ry="8" fill="#000000" opacity="0.2" />
+        <rect x="20" y="55" width="160" height="50" rx="12" fill="#111827" stroke="#374151" strokeWidth="2" />
+        <rect x="25" y="60" width="150" height="40" rx="8" fill="#1E293B" />
+        <path d="M25 60 L140 60 L100 100 L25 100 Z" fill="#3B82F6" opacity="0.2" />
+        <circle cx="36" cy="70" r="3" fill="#EF4444" />
+        <text x="43" y="73" fill="#FFFFFF" fontSize="7" fontWeight="bold">REC 4K</text>
+      </svg>
+    )
+  }
+
+  if (type === "blindspot") {
+    return (
+      <svg viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+        <ellipse cx="100" cy="125" rx="65" ry="8" fill="#000000" opacity="0.2" />
+        {/* Radar Master ECU Module */}
+        <rect x="45" y="48" width="70" height="64" rx="8" fill="#1E293B" stroke="#475569" strokeWidth="1.5" />
+        <rect x="52" y="55" width="56" height="50" rx="4" fill="#0F172A" />
+        <circle cx="80" cy="80" r="14" fill="#1E3A8A" opacity="0.6" />
+        <circle cx="80" cy="80" r="8" fill="#3B82F6" />
+        <text x="58" y="100" fill="#94A3B8" fontSize="7" fontWeight="bold">77GHz RADAR</text>
+        {/* Pillar Warning LED Indicators */}
+        <rect x="130" y="52" width="22" height="38" rx="6" fill="#111827" stroke="#374151" />
+        <circle cx="141" cy="71" r="6" fill="#F59E0B" />
+        <circle cx="141" cy="71" r="3" fill="#FEF08A" />
+        {/* Warning Icon Waves */}
+        <path d="M156 65 Q164 71 156 77" stroke="#F59E0B" strokeWidth="2" fill="none" />
+      </svg>
+    )
+  }
+
+  if (type === "overhead") {
+    return (
+      <svg viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+        <ellipse cx="100" cy="135" rx="60" ry="7" fill="#000000" opacity="0.2" />
+        {/* Ceiling Housing Bracket */}
+        <rect x="35" y="30" width="130" height="24" rx="6" fill="#1F2937" stroke="#374151" />
+        <circle cx="50" cy="42" r="5" fill="#E2E8F0" opacity="0.8" />
+        <circle cx="150" cy="42" r="5" fill="#E2E8F0" opacity="0.8" />
+        {/* Flipped Down Screen Display */}
+        <rect x="45" y="54" width="110" height="72" rx="6" fill="#111827" stroke="#475569" strokeWidth="1.5" />
+        <rect x="50" y="59" width="100" height="62" rx="3" fill="#1E3A8A" />
+        <polygon points="90,75 118,90 90,105" fill="#FFFFFF" opacity="0.9" />
+      </svg>
+    )
+  }
+
+  // Fallback
   return (
     <svg viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-      <ellipse cx="100" cy="120" rx="75" ry="8" fill="#000000" opacity="0.2" />
-      {/* Mirror body */}
-      <rect x="20" y="55" width="160" height="50" rx="12" fill="#111827" stroke="#374151" strokeWidth="2" />
-      <rect x="25" y="60" width="150" height="40" rx="8" fill="#1E293B" />
-      {/* Mirror screen reflection gradient */}
-      <path d="M25 60 L140 60 L100 100 L25 100 Z" fill="#3B82F6" opacity="0.2" />
-      {/* Mini REC indicator */}
-      <circle cx="36" cy="70" r="3" fill="#EF4444" />
-      <text x="43" y="73" fill="#FFFFFF" fontSize="7" fontWeight="bold">REC 4K</text>
+      <ellipse cx="100" cy="120" rx="70" ry="8" fill="#000000" opacity="0.2" />
+      <rect x="40" y="45" width="120" height="70" rx="10" fill="#1F2937" stroke="#374151" strokeWidth="1.5" />
+      <circle cx="100" cy="80" r="22" fill="#D92228" opacity="0.8" />
+      <text x="80" y="85" fill="#FFFFFF" fontSize="12" fontWeight="bold">ACCELE</text>
     </svg>
   )
 }
