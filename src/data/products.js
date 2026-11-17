@@ -334,13 +334,13 @@ export const PRODUCTS = [
   },
   {
     "id": "accele-lcdrv700wlbmk",
-    "name": "LCDRV700WLBMK",
+    "name": "7\" Wireless Commercial DVR",
     "model": "LCDRV700WLBMK",
     "category": "DVR",
     "price": 299.99,
     "rating": 4.8,
     "reviewsCount": 35,
-    "description": "Official Accele Electronics LCDRV700WLBMK professional automotive grade hardware with high reliability and direct vehicle fitment.",
+    "description": "Heavy-duty 7\" digital wireless DVR monitor with recording and quad split display.",
     "features": [
       {
         "id": "oem",
@@ -371,13 +371,13 @@ export const PRODUCTS = [
   },
   {
     "id": "accele-lcdrv7dvr3cbsk",
-    "name": "LCDRV7DVR3CBSK",
+    "name": "Triple Camera Commercial DVR",
     "model": "LCDRV7DVR3CBSK",
     "category": "DVR",
     "price": 299.99,
     "rating": 4.8,
     "reviewsCount": 23,
-    "description": "Official Accele Electronics LCDRV7DVR3CBSK professional automotive grade hardware with high reliability and direct vehicle fitment.",
+    "description": "Commercial 3-channel mobile DVR system with continuous recording and blind-spot side cameras.",
     "features": [
       {
         "id": "oem",
@@ -408,13 +408,13 @@ export const PRODUCTS = [
   },
   {
     "id": "accele-axvod10uni",
-    "name": "AXVOD10UNI",
+    "name": "10.2\" Universal Headrest Screen",
     "model": "AXVOD10UNI",
     "category": "Headrest",
     "price": 289.99,
     "rating": 4.8,
     "reviewsCount": 51,
-    "description": "Official Accele Electronics AXVOD10UNI professional automotive grade hardware with high reliability and direct vehicle fitment.",
+    "description": "Universal rear seat entertainment 10.2\" HD monitor with HDMI, USB, and IR audio.",
     "features": [
       {
         "id": "oem",
@@ -445,13 +445,13 @@ export const PRODUCTS = [
   },
   {
     "id": "accele-axvod1150unik",
-    "name": "AXVOD1150UNIK",
+    "name": "11.6\" Touchscreen Headrest Kit",
     "model": "AXVOD1150UNIK",
     "category": "Headrest",
     "price": 289.99,
     "rating": 4.8,
     "reviewsCount": 31,
-    "description": "Official Accele Electronics AXVOD1150UNIK professional automotive grade hardware with high reliability and direct vehicle fitment.",
+    "description": "Pair of 11.6\" full touchscreen Android media headrest monitors with wireless mirroring.",
     "features": [
       {
         "id": "oem",
@@ -482,13 +482,13 @@ export const PRODUCTS = [
   },
   {
     "id": "accele-bu-plcdsp700",
-    "name": "BU-PLCDSP700",
+    "name": "7\" Commercial Split Monitor",
     "model": "BU-PLCDSP700",
     "category": "Commercial",
     "price": 319.99,
     "rating": 4.8,
     "reviewsCount": 35,
-    "description": "Official Accele Electronics BU-PLCDSP700 professional automotive grade hardware with high reliability and direct vehicle fitment.",
+    "description": "Dual-view commercial 7-inch LCD monitor with sunshade and auto-trigger reverse switching.",
     "features": [
       {
         "id": "oem",
@@ -519,13 +519,13 @@ export const PRODUCTS = [
   },
   {
     "id": "accele-lcdrv700ccds",
-    "name": "LCDRV700CCDS",
+    "name": "7\" Heavy-Duty RV Display",
     "model": "LCDRV700CCDS",
     "category": "Commercial",
     "price": 319.99,
     "rating": 4.8,
     "reviewsCount": 36,
-    "description": "Official Accele Electronics LCDRV700CCDS professional automotive grade hardware with high reliability and direct vehicle fitment.",
+    "description": "Rugged waterproof commercial monitor kit with night-vision CCD rear view camera.",
     "features": [
       {
         "id": "oem",
@@ -556,13 +556,13 @@ export const PRODUCTS = [
   },
   {
     "id": "accele-as45",
-    "name": "AS45",
+    "name": "Vehicle Security Alarm System",
     "model": "AS45",
     "category": "Security",
     "price": 169.99,
     "rating": 4.8,
     "reviewsCount": 25,
-    "description": "Official Accele Electronics AS45 professional automotive grade hardware with high reliability and direct vehicle fitment.",
+    "description": "Full vehicle security alarm kit with dual remote fobs, multi-tone siren, and dual-stage shock sensor.",
     "features": [
       {
         "id": "oem",
@@ -593,13 +593,13 @@ export const PRODUCTS = [
   },
   {
     "id": "accele-as450",
-    "name": "AS450",
+    "name": "Keyless Entry & Remote Start",
     "model": "AS450",
     "category": "Security",
     "price": 169.99,
     "rating": 4.8,
     "reviewsCount": 44,
-    "description": "Official Accele Electronics AS450 professional automotive grade hardware with high reliability and direct vehicle fitment.",
+    "description": "Extended range keyless entry and remote engine starter with anti-carjack protection.",
     "features": [
       {
         "id": "oem",
@@ -630,13 +630,13 @@ export const PRODUCTS = [
   },
   {
     "id": "accele-hud-t200",
-    "name": "HUD-T200",
+    "name": "T-Series Windshield HUD",
     "model": "HUD-T200",
     "category": "HUD",
     "price": 109.99,
     "rating": 4.8,
     "reviewsCount": 34,
-    "description": "Official Accele Electronics HUD-T200 professional automotive grade hardware with high reliability and direct vehicle fitment.",
+    "description": "Plug-and-play OBD2 digital windshield projection system with speed, RPM, and temp readouts.",
     "features": [
       {
         "id": "oem",
@@ -667,13 +667,13 @@ export const PRODUCTS = [
   },
   {
     "id": "accele-hud300",
-    "name": "HUD300",
+    "name": "GPS Digital Speedometer HUD",
     "model": "HUD300",
     "category": "HUD",
     "price": 109.99,
     "rating": 4.8,
     "reviewsCount": 36,
-    "description": "Official Accele Electronics HUD300 professional automotive grade hardware with high reliability and direct vehicle fitment.",
+    "description": "High-contrast multi-color GPS head-up display with overspeed alarm and fatigue driving reminder.",
     "features": [
       {
         "id": "oem",
@@ -704,13 +704,13 @@ export const PRODUCTS = [
   },
   {
     "id": "accele-jw-c200n",
-    "name": "JW-C200N",
+    "name": "Heated Seat Cushion Insert",
     "model": "JW-C200N",
     "category": "Comfort",
     "price": 99.99,
     "rating": 4.8,
     "reviewsCount": 43,
-    "description": "Official Accele Electronics JW-C200N professional automotive grade hardware with high reliability and direct vehicle fitment.",
+    "description": "Rapid warming carbon fiber heated seat insert with low/high heat dial controller.",
     "features": [
       {
         "id": "oem",
@@ -741,13 +741,13 @@ export const PRODUCTS = [
   },
   {
     "id": "accele-jw-c400",
-    "name": "JW-C400",
+    "name": "Dual Carbon Seat Heater",
     "model": "JW-C400",
     "category": "Comfort",
     "price": 99.99,
     "rating": 4.8,
     "reviewsCount": 15,
-    "description": "Official Accele Electronics JW-C400 professional automotive grade hardware with high reliability and direct vehicle fitment.",
+    "description": "Complete two-seat carbon fiber seat warming kit with illuminated factory-style rocker switch.",
     "features": [
       {
         "id": "oem",
@@ -778,13 +778,13 @@ export const PRODUCTS = [
   },
   {
     "id": "accele-lcdb19w",
-    "name": "LCDB19W",
+    "name": "19\" Bus Ceiling Monitor",
     "model": "LCDB19W",
     "category": "BusCoach",
     "price": 239.99,
     "rating": 4.8,
     "reviewsCount": 51,
-    "description": "Official Accele Electronics LCDB19W professional automotive grade hardware with high reliability and direct vehicle fitment.",
+    "description": "Commercial transit passenger ceiling display with ultra-wide viewing angles and vandal-resistant housing.",
     "features": [
       {
         "id": "oem",
@@ -815,13 +815,13 @@ export const PRODUCTS = [
   },
   {
     "id": "accele-lcdbfd19wx",
-    "name": "LCDBFD19WX",
+    "name": "19\" Motorized Flip Screen",
     "model": "LCDBFD19WX",
     "category": "BusCoach",
     "price": 239.99,
     "rating": 4.8,
     "reviewsCount": 18,
-    "description": "Official Accele Electronics LCDBFD19WX professional automotive grade hardware with high reliability and direct vehicle fitment.",
+    "description": "Overhead motorized drop-down 19\" commercial passenger bus entertainment monitor.",
     "features": [
       {
         "id": "oem",
@@ -852,13 +852,13 @@ export const PRODUCTS = [
   },
   {
     "id": "accele-rvcwifiahdj",
-    "name": "RVCWIFIAHDJ",
+    "name": "Wireless AHD Video Transmitter",
     "model": "RVCWIFIAHDJ",
     "category": "AVAccessories",
     "price": 79.99,
     "rating": 4.8,
     "reviewsCount": 35,
-    "description": "Official Accele Electronics RVCWIFIAHDJ professional automotive grade hardware with high reliability and direct vehicle fitment.",
+    "description": "Long-range 2.4GHz digital wireless video transmitter and receiver for backup cameras.",
     "features": [
       {
         "id": "oem",
@@ -889,13 +889,13 @@ export const PRODUCTS = [
   },
   {
     "id": "accele-dinbus302amfm",
-    "name": "DINBUS302AMFM",
+    "name": "Transit AM/FM PA Controller",
     "model": "DINBUS302AMFM",
     "category": "AVAccessories",
     "price": 79.99,
     "rating": 4.8,
     "reviewsCount": 53,
-    "description": "Official Accele Electronics DINBUS302AMFM professional automotive grade hardware with high reliability and direct vehicle fitment.",
+    "description": "Single DIN bus public address control head with AM/FM tuner and priority driver microphone input.",
     "features": [
       {
         "id": "oem",
@@ -926,13 +926,13 @@ export const PRODUCTS = [
   },
   {
     "id": "accele-cig10",
-    "name": "CIG10",
+    "name": "Dual USB Fast Charger Port",
     "model": "CIG10",
     "category": "USBHDMI",
     "price": 49.99,
     "rating": 4.8,
     "reviewsCount": 26,
-    "description": "Official Accele Electronics CIG10 professional automotive grade hardware with high reliability and direct vehicle fitment.",
+    "description": "Flush dash-mount dual USB 3.0 fast charging outlet with weatherproof rubber seal cap.",
     "features": [
       {
         "id": "oem",
@@ -963,13 +963,13 @@ export const PRODUCTS = [
   },
   {
     "id": "accele-dvm200",
-    "name": "DVM200",
+    "name": "Digital Voltmeter Gauge",
     "model": "DVM200",
     "category": "USBHDMI",
     "price": 49.99,
     "rating": 4.8,
     "reviewsCount": 48,
-    "description": "Official Accele Electronics DVM200 professional automotive grade hardware with high reliability and direct vehicle fitment.",
+    "description": "Compact 12V/24V LED numeric digital battery voltage monitor gauge with round flush mount.",
     "features": [
       {
         "id": "oem",
@@ -1000,13 +1000,13 @@ export const PRODUCTS = [
   },
   {
     "id": "accele-6102c",
-    "name": "6102C",
+    "name": "2\" Stroke Linear Actuator",
     "model": "6102C",
     "category": "Motorization",
     "price": 139.99,
     "rating": 4.8,
     "reviewsCount": 51,
-    "description": "Official Accele Electronics 6102C professional automotive grade hardware with high reliability and direct vehicle fitment.",
+    "description": "Heavy-duty 12V DC 200lb thrust motorized linear actuator with built-in limit switches.",
     "features": [
       {
         "id": "oem",
@@ -1037,13 +1037,13 @@ export const PRODUCTS = [
   },
   {
     "id": "accele-6112c",
-    "name": "6112C",
+    "name": "12\" Heavy Linear Actuator",
     "model": "6112C",
     "category": "Motorization",
     "price": 139.99,
     "rating": 4.8,
     "reviewsCount": 15,
-    "description": "Official Accele Electronics 6112C professional automotive grade hardware with high reliability and direct vehicle fitment.",
+    "description": "High-torque 12V 12-inch stroke linear actuator for tonneau covers, amp racks, and custom panels.",
     "features": [
       {
         "id": "oem",
@@ -1074,13 +1074,13 @@ export const PRODUCTS = [
   },
   {
     "id": "accele-5035",
-    "name": "5035",
+    "name": "12V 40A SPDT Relay",
     "model": "5035",
     "category": "Relays",
     "price": 29.99,
     "rating": 4.8,
     "reviewsCount": 22,
-    "description": "Official Accele Electronics 5035 professional automotive grade hardware with high reliability and direct vehicle fitment.",
+    "description": "Automotive Bosch style 12V 30A/40A SPDT continuous duty switching relay with steel mounting tab.",
     "features": [
       {
         "id": "oem",
@@ -1111,13 +1111,13 @@ export const PRODUCTS = [
   },
   {
     "id": "accele-5076brs",
-    "name": "5076BRS",
+    "name": "Relay Harness & Socket",
     "model": "5076BRS",
     "category": "Relays",
     "price": 29.99,
     "rating": 4.8,
     "reviewsCount": 32,
-    "description": "Official Accele Electronics 5076BRS professional automotive grade hardware with high reliability and direct vehicle fitment.",
+    "description": "5-pin interlocking weatherproof relay socket harness with color-coded 14AWG leads for clean automotive wiring.",
     "features": [
       {
         "id": "oem",
@@ -1148,13 +1148,13 @@ export const PRODUCTS = [
   },
   {
     "id": "accele-5600",
-    "name": "5600",
+    "name": "ATC Blade Fuse Kit",
     "model": "5600",
     "category": "Fuses",
     "price": 19.99,
     "rating": 4.8,
     "reviewsCount": 16,
-    "description": "Official Accele Electronics 5600 professional automotive grade hardware with high reliability and direct vehicle fitment.",
+    "description": "Standard automotive blade fuse assortment pack with transparent housing and zinc alloy terminals.",
     "features": [
       {
         "id": "oem",
@@ -1185,13 +1185,13 @@ export const PRODUCTS = [
   },
   {
     "id": "accele-5601",
-    "name": "5601",
+    "name": "Mini Blade Fuse Pack",
     "model": "5601",
     "category": "Fuses",
     "price": 19.99,
     "rating": 4.8,
     "reviewsCount": 43,
-    "description": "Official Accele Electronics 5601 professional automotive grade hardware with high reliability and direct vehicle fitment.",
+    "description": "OEM spec ATM mini blade fast-acting fuses for modern automotive circuit protection.",
     "features": [
       {
         "id": "oem",
@@ -1222,13 +1222,13 @@ export const PRODUCTS = [
   },
   {
     "id": "accele-610blk",
-    "name": "610BLK",
+    "name": "Primary Ground Wire 10AWG",
     "model": "610BLK",
     "category": "Wiring",
     "price": 39.99,
     "rating": 4.8,
     "reviewsCount": 20,
-    "description": "Official Accele Electronics 610BLK professional automotive grade hardware with high reliability and direct vehicle fitment.",
+    "description": "High-flex 100% pure copper primary ground wire spool with chemical-resistant PVC jacket.",
     "features": [
       {
         "id": "oem",
@@ -1259,13 +1259,13 @@ export const PRODUCTS = [
   },
   {
     "id": "accele-610red",
-    "name": "610RED",
+    "name": "Primary Power Wire 10AWG",
     "model": "610RED",
     "category": "Wiring",
     "price": 39.99,
     "rating": 4.8,
     "reviewsCount": 44,
-    "description": "Official Accele Electronics 610RED professional automotive grade hardware with high reliability and direct vehicle fitment.",
+    "description": "High-strand copper 12V automotive battery power wire spool with heat-resistant insulation.",
     "features": [
       {
         "id": "oem",
@@ -1296,13 +1296,13 @@ export const PRODUCTS = [
   },
   {
     "id": "accele-1013",
-    "name": "1013",
+    "name": "Crimp Terminal Connectors",
     "model": "1013",
     "category": "Hardware",
     "price": 24.99,
     "rating": 4.8,
     "reviewsCount": 28,
-    "description": "Official Accele Electronics 1013 professional automotive grade hardware with high reliability and direct vehicle fitment.",
+    "description": "Assorted nylon-insulated vinyl spade and ring crimp terminals for automotive electrical wiring.",
     "features": [
       {
         "id": "oem",
@@ -1333,13 +1333,13 @@ export const PRODUCTS = [
   },
   {
     "id": "accele-101a",
-    "name": "101A",
+    "name": "Quick-Splice T-Tap Kit",
     "model": "101A",
     "category": "Hardware",
     "price": 24.99,
     "rating": 4.8,
     "reviewsCount": 35,
-    "description": "Official Accele Electronics 101A professional automotive grade hardware with high reliability and direct vehicle fitment.",
+    "description": "Self-stripping quick splice female tap connectors for wire tapping without cutting or soldering.",
     "features": [
       {
         "id": "oem",
